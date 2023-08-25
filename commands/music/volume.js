@@ -1,5 +1,5 @@
 const chalk = require('chalk');
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = { 
     config: {
@@ -23,7 +23,7 @@ module.exports = {
 
         await player.setVolume(Number(args[0]));
 
-        const changevol = new MessageEmbed()
+        const changevol = new EmbedBuilder()
             .setDescription(`\`🔊\` | **Change volume to:** \`${args[0]}\``)
             .setColor('#000001');
         
