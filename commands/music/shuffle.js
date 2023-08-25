@@ -1,5 +1,5 @@
 const chalk = require('chalk');
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = { 
     config: {
@@ -19,7 +19,7 @@ module.exports = {
 
 		await player.queue.shuffle();
 
-        const shuffle = new MessageEmbed()
+        const shuffle = new EmbedBuilder()
             .setDescription("\`🔀\` | **Queue has been:** `Shuffle`")
             .setColor('#000001');
         
