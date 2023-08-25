@@ -20,7 +20,7 @@ module.exports = {
         if (!channel || message.member.voice.channel !== message.guild.me.voice.channel) return message.channel.send("You need to be in a same/voice channel.")
 
 		if (!args[0]) {
-			const embed = new Discord.MessageEmbed()
+			const embed = new Discord.EmbedBuilder()
 				.setAuthor({ name: 'Custom Equalizer', iconURL: "https://cdn.discordapp.com/emojis/758423098885275748.gif"})
 				.setColor('#000001')
 				.setDescription('There are 14 bands that can be set from -10 to 10. Not all bands have to be filled out.')
@@ -48,7 +48,7 @@ module.exports = {
 
 		const delay = ms => new Promise(res => setTimeout(res, ms));
 		const msg = await message.channel.send(`Setting equalizer to... \`${bandsStr}\` Please wait...`);
-		const embed = new Discord.MessageEmbed()
+		const embed = new Discord.EmbedBuilder()
 			.setAuthor({ name: message.guild.name, iconURL: message.guild.iconURL({ dynamic: true })})
 			.setDescription(`Custom Equalizer: \`${bandsStr}\``)
 			.setFooter({ text: `Reset Equalizer, Typing: ${PREFIX}reset`})
