@@ -1,6 +1,6 @@
 const { convertTime } = require("../../structures/convert.js")
 const chalk = require('chalk');
-const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder } = require("discord.js");
 
 module.exports = { 
     config: {
@@ -32,7 +32,7 @@ module.exports = {
                 case "TRACK_LOADED":
                     player.queue.add(res.tracks[0]);
 
-                const embed = new MessageEmbed()
+                const embed = new EmbedBuilder()
                     .setDescription(`**Queued • [${res.tracks[0].title}](${res.tracks[0].uri})** \`${convertTime(res.tracks[0].duration, true)}\` • ${res.tracks[0].requester}`)
                     .setColor('#000001')
 
@@ -48,7 +48,7 @@ module.exports = {
                 );
                     player.queue.add(res1.tracks[0]);
 
-                    const embed1 = new MessageEmbed()
+                    const embed1 = new EmbedBuilder()
                         .setDescription(`**Queued • [${res1.tracks[0].title}](${res1.tracks[0].uri})** \`${convertTime(res1.tracks[0].duration, true)}\` • ${res1.tracks[0].requester}`)
                         .setColor('#000001')
             
@@ -61,7 +61,7 @@ module.exports = {
                     let search = await player.search(args.join(" "), message.author);
                     player.queue.add(search.tracks)
 
-                    const playlist = new MessageEmbed()
+                    const playlist = new EmbedBuilder()
                         .setDescription(`**Queued** • [${search.playlist.name}](${args.join(" ")}) \`${convertTime(search.playlist.duration)}\` (${search.tracks.length} tracks) • ${search.tracks[0].requester}`)
                         .setColor('#000001')
 
