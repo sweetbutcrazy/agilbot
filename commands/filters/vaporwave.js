@@ -1,6 +1,6 @@
 const delay = require('delay');
 const chalk = require('chalk');
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 const { vaporwave } = require('../../config/filter');
 
 module.exports = { 
@@ -22,7 +22,7 @@ module.exports = {
 
         await player.setFilter('filters', vaporwave);
 
-        const vaporwaved = new MessageEmbed()
+        const vaporwaved = new EmbedBuilder()
             .setAuthor({ name: "Turned on: Vaporwave", iconURL: 'https://cdn.discordapp.com/emojis/758423098885275748.gif'})
             .setColor('#000001');
 
