@@ -1,6 +1,6 @@
 const delay = require('delay');
 const chalk = require('chalk');
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 const { reset } = require('../../config/filter');
 
 module.exports = { 
@@ -28,7 +28,7 @@ module.exports = {
 		});
 
 		const msg = await message.channel.send(`Setting **Pitch** to **${args[0]}**. This may take a few seconds...`);
-		const embed = new MessageEmbed()
+		const embed = new EmbedBuilder()
 			.setAuthor({ name: `Pitch set to: ${args[0]}`, iconURL: 'https://cdn.discordapp.com/emojis/758423098885275748.gif'})
 			.setColor('#000001');
 		await delay(5000);
