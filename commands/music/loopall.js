@@ -1,5 +1,5 @@
 const chalk = require('chalk');
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
     config: {
@@ -20,7 +20,7 @@ module.exports = {
 		if (player.queueRepeat === true) {
             player.setQueueRepeat(false)
             
-            const unloopall = new MessageEmbed()
+            const unloopall = new EmbedBuilder()
                 .setDescription(`\`🔁\` | **Song is unloop:** \`All\``)
                 .setColor('#000001');
 
@@ -30,7 +30,7 @@ module.exports = {
 		else {
             player.setQueueRepeat(true);
             
-            const loopall = new MessageEmbed()
+            const loopall = new EmbedBuilder()
                 .setDescription(`\`🔁\` | **Song is loop:** \`All\``)
                 .setColor('#000001');
 
