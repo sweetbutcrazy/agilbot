@@ -1,5 +1,5 @@
 const chalk = require('chalk');
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 const { PREFIX } = require('../../config.json')
 
 module.exports = { 
@@ -27,7 +27,7 @@ module.exports = {
 		await player.queue.splice(0, args[0] - 1);
         await player.stop();
         
-        const skipto = new MessageEmbed()
+        const skipto = new EmbedBuilder()
             .setDescription("\`⏭\` | **Song has been:** " + `\`Skipto\``)
             .setColor('#000001');
 
