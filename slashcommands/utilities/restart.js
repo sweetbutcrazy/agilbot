@@ -1,5 +1,5 @@
 const chalk = require('chalk');
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
     name: "restart",
@@ -9,7 +9,7 @@ module.exports = {
 
     run: async (interaction, client) => {
     await interaction.deferReply({ ephemeral: false });
-    const restart = new MessageEmbed()
+    const restart = new EmbedBuilder()
         .setDescription("**Account has been**: `Shutting down...`")
         .setColor("#000001");
 
