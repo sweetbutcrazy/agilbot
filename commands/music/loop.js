@@ -1,5 +1,5 @@
 const chalk = require('chalk');
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
     config: {
@@ -22,7 +22,7 @@ module.exports = {
 			if (player.trackRepeat === false) {
 				player.setTrackRepeat(true);
 
-				const looped = new MessageEmbed()
+				const looped = new EmbedBuilder()
 					.setDescription(`\`🔁\` | **Song is loop:** \`<:cx_tick:1094532084552450058>\``)
 					.setColor('#000001');
 
@@ -32,7 +32,7 @@ module.exports = {
 			else {
 				player.setTrackRepeat(false);
 
-				const unlooped = new MessageEmbed()
+				const unlooped = new EmbedBuilder()
 					.setDescription(`\`🔁\` | **Song is unloop:** \`<:cx_tick:1094532084552450058>\``)
 					.setColor('#000001');
 
@@ -44,7 +44,7 @@ module.exports = {
 			if (player.queueRepeat === true) {
 				player.setQueueRepeat(false);
 
-				const unloopall = new MessageEmbed()
+				const unloopall = new EmbedBuilder()
 					.setDescription(`\`🔁\` | **Song is unloop:** \`<:cx_tick:1094532084552450058>\``)
 					.setColor('#000001');
 
@@ -54,7 +54,7 @@ module.exports = {
 			else {
 				player.setQueueRepeat(true);
 
-				const loopall = new MessageEmbed()
+				const loopall = new EmbedBuilder()
 					.setDescription(`\`🔁\` | **Song is loop:** \`<:cx_tick:1094532084552450058>\``)
 					.setColor('#000001');
 
