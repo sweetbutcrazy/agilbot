@@ -1,5 +1,5 @@
 const chalk = require('chalk');
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = { 
     config: {
@@ -20,7 +20,7 @@ module.exports = {
 
         if (player.twentyFourSeven) {
             player.twentyFourSeven = false;
-            const off = new MessageEmbed()
+            const off = new EmbedBuilder()
             .setDescription("\`🌙\` | **Mode 24/7 has been:** `Disabled`")
             .setColor('#000001');
 
@@ -28,7 +28,7 @@ module.exports = {
             console.log(chalk.magenta(`[COMMAND] 24/7 used by ${message.author.tag} from ${message.guild.name}`));
         } else {
             player.twentyFourSeven = true;
-            const on = new MessageEmbed()
+            const on = new EmbedBuilder()
             .setDescription("\`🌕\` | **Mode 24/7 has been:** `Enabled`")
             .setColor('#000001');
 
