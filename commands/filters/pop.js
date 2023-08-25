@@ -1,6 +1,6 @@
 const delay = require('delay');
 const chalk = require('chalk');
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 const { pop } = require('../../config/filter');
 
 module.exports = { 
@@ -22,7 +22,7 @@ module.exports = {
 
         player.setFilter('filters', pop);
 
-        const popped = new MessageEmbed()
+        const popped = new EmbedBuilder()
             .setAuthor({ name: "Turned on: Pop", iconURL: 'https://cdn.discordapp.com/emojis/758423098885275748.gif'})
             .setColor('#000001');
 
