@@ -1,5 +1,5 @@
 const chalk = require('chalk');
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 const { PREFIX } = require('../../config.json');
 const formatDuration = require('../../structures/formatduration.js')
 
@@ -28,7 +28,7 @@ module.exports = {
 			if((player.position - args[0] * 1000) > 0) {
                 await player.seek(player.position - args[0] * 1000);
                 
-                const rewind1 = new MessageEmbed()
+                const rewind1 = new EmbedBuilder()
                 .setDescription("\`⏮\` | **Rewind to:** "+ `\`${CurrentDuration}\``)
                 .setColor('#000001');
 
@@ -47,7 +47,7 @@ module.exports = {
 			if((player.position - rewindNum * 1000) > 0) {
                 await player.seek(player.position - rewindNum * 1000);
                 
-                const rewind2 = new MessageEmbed()
+                const rewind2 = new EmbedBuilder()
                 .setDescription("\`⏮\` | **Rewind to:** "+ `\`${CurrentDuration}\``)
                 .setColor('#000001');
 
