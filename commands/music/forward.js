@@ -1,5 +1,5 @@
 const chalk = require('chalk');
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 const { PREFIX } = require('../../config.json');
 const formatDuration = require('../../structures/formatduration.js')
 
@@ -30,7 +30,7 @@ module.exports = {
 			if((player.position + args[0] * 1000) < duration) {
                 player.seek(player.position + args[0] * 1000);
                 
-                const forward1 = new MessageEmbed()
+                const forward1 = new EmbedBuilder()
                 .setDescription("\`⏭\` | **Forward to:** "+ `\`${CurrentDuration}\``)
                 .setColor('#000001');
 
@@ -49,7 +49,7 @@ module.exports = {
 			if((player.position + fastForwardNum * 1000) < duration) {
                 player.seek(player.position + fastForwardNum * 1000);
                 
-                const forward2 = new MessageEmbed()
+                const forward2 = new EmbedBuilder()
                 .setDescription("\`⏭\` | **Forward to:** "+ `\`${CurrentDuration}\``)
                 .setColor('#000001');
 
