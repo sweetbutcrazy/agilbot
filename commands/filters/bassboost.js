@@ -1,6 +1,6 @@
 const delay = require('delay');
 const chalk = require('chalk');
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = { 
     config: {
@@ -21,7 +21,7 @@ module.exports = {
 		if (!args[0]) {
 			player.setFilter('filters', Array(6).fill(0).map((n, i) => ({ band: i, gain: 0.65 })));
 			const msg1 = await message.channel.send(`Turning on **Bassboost**. This may take a few seconds...`);
-			const embed = new MessageEmbed()
+			const embed = new EmbedBuilder()
 				.setAuthor({ name: 'Turned on: Bassboost', iconURL: 'https://cdn.discordapp.com/emojis/758423098885275748.gif'})
                 .setColor('#000001');
                 
@@ -38,7 +38,7 @@ module.exports = {
 		else player.setFilter('filters', Array(6).fill(0).map((n, i) => ({ band: i, gain: args[0] / 10 })));
 
 		const msg2 = await message.channel.send(`Setting **Bassboost** to **${args[0]}dB**. This may take a few seconds...`);
-		const embed = new MessageEmbed()
+		const embed = new EmbedBuilder()
 			.setAuthor({ name: `Bassboost set to: ${args[0]}`, iconURL: 'https://cdn.discordapp.com/emojis/758423098885275748.gif'})
             .setColor('#000001');
             
