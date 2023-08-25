@@ -1,5 +1,5 @@
 const chalk = require('chalk');
-const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder } = require("discord.js");
 const { convertTime } = require("../../structures/convert");
 
 module.exports = { 
@@ -32,7 +32,7 @@ module.exports = {
                 case "TRACK_LOADED":
                     player.queue.add(res.tracks[0]);
 
-                const embed = new MessageEmbed()
+                const embed = new EmbedBuilder()
                     .setDescription(`**Queued • [${res.tracks[0].title}](${res.tracks[0].uri})** \`${convertTime(res.tracks[0].duration, true)}\` • ${res.tracks[0].requester}`)
                     .setColor('#000001')
 
@@ -50,7 +50,7 @@ module.exports = {
                         .map(video => `**(${index++}.) [${video.title}](${video.uri})** \`${convertTime(video.duration)}\` Author: \`${video.author}\``)
                         .join("\n");
 
-                    const playing = new MessageEmbed()
+                    const playing = new EmbedBuilder()
                         .setAuthor({ name: `Song Selection...`, iconURL: message.guild.iconURL({ dynamic: true }) })
                         .setColor('#000001')
                         .setDescription(results)
@@ -68,7 +68,7 @@ module.exports = {
                         const track = tracks[Number(m.content) - 1];
                         player.queue.add(track)
 
-                        const embed = new MessageEmbed()
+                        const embed = new EmbedBuilder()
                             .setDescription(`**Queued • [${track.title}](${track.uri})** \`${convertTime(track.duration)}\` • ${track.requester}`)
                             .setColor('#000001');
 
