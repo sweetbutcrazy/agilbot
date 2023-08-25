@@ -2,7 +2,7 @@ const delay = require('delay');
 const { normal } = require('../../config/volume.js');
 const { reset } = require('../../config/filter')
 const chalk = require('chalk');
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = { 
     config: {
@@ -24,7 +24,7 @@ module.exports = {
 		await player.setFilter('filters', reset);
         await player.setVolume(normal);
         
-        const resetted = new MessageEmbed()
+        const resetted = new EmbedBuilder()
             .setAuthor({ name: "Filter has been: Reseted", iconURL: 'https://cdn.discordapp.com/emojis/758423099178745876.gif'})
             .setColor('#000001');
 
