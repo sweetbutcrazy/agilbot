@@ -1,5 +1,5 @@
 const chalk = require('chalk');
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = { 
     config: {
@@ -19,7 +19,7 @@ module.exports = {
 
         await player.seek(0);
 
-        const embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
             .setDescription("\`⏮\` | **Song has been:** `Replay`")
             .setColor('#000001');
 
