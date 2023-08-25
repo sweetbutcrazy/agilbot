@@ -1,5 +1,5 @@
 const chalk = require('chalk');
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = { 
     config: {
@@ -20,7 +20,7 @@ module.exports = {
 
         player.queue.clear();
         
-        const cleared = new MessageEmbed()
+        const cleared = new EmbedBuilder()
             .setDescription("\`📛\` | **Queue has been:** `Cleared`")
             .setColor('#000001');
 
