@@ -1,6 +1,6 @@
 const chalk = require('chalk');
 const formatDuration = require("../../structures/formatduration.js");
-const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder } = require("discord.js");
 const ytsr = require("youtube-sr").default;
 
 module.exports = { 
@@ -30,18 +30,18 @@ module.exports = {
         const views = songInfo.views;
         const uploadat = songInfo.uploadedAt;
 
-        const embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
             .setAuthor({ name: player.playing ? 'Now Playing...' : 'Song Pause..', iconURL: "https://cdn.discordapp.com/emojis/741605543046807626.gif" })
             .setColor('#000001')
             .setDescription(`**[${song.title}](${song.uri})**`)
             .setThumbnail(thumbnail)
-            .addField('Author:', `${song.author}`, true)
+            .addField({name: 'Author:', value:`${song.author}`, inline: true})
             .addField('Requester:', `${song.requester}`, true)
             .addField('Volume:', `${player.volume}%`, true)
             .addField('Views:', `${views}`, true)
             .addField('Upload At:', `${uploadat}`, true)
             .addField('Download:', `**[Click Here](https://www.mp3fromlink.com/watch?v=${song.identifier})**`, true)
-			.addField(`Current Duration: \`[${CurrentDuration} / ${Duration}]\``, `\`\`\`${emoji} ${'─'.repeat(part) + '🎶' + '─'.repeat(30 - part)}\`\`\``)
+            .addField(`Current Duration: \`[${CurrentDuration} / ${Duration}]\``, `\`\`\`${emoji} ${'─'.repeat(part) + '🎶' + '─'.repeat(30 - part)}\`\`\``)
             .setTimestamp();
             
             msg.edit({ content: " ", embeds: [embed] })
