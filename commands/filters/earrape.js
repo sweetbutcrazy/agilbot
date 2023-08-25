@@ -2,7 +2,7 @@ const delay = require('delay');
 const { earrape } = require('../../config/volume.js')
 const { reset } = require('../../config/filter.js')
 const chalk = require('chalk');
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = { 
     config: {
@@ -24,7 +24,7 @@ module.exports = {
 		await player.setVolume(earrape);
 		await player.setFilter('filters', reset);
 
-        const earrapped = new MessageEmbed()
+        const earrapped = new EmbedBuilder()
             .setAuthor({ name: "Turn on filter: Earrape", iconURL: 'https://cdn.discordapp.com/emojis/758423098885275748.gif'})
             .setColor('#000001');
 
