@@ -1,6 +1,6 @@
 const delay = require('delay');
 const chalk = require('chalk');
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 const { reset } = require('../../config/filter');
 
 module.exports = { 
@@ -27,7 +27,7 @@ module.exports = {
 			timescale: { rate: args[0] },
 		});
 		const msg = await message.channel.send(`Setting **Rate** to **${args[0]}x**. This may take a few seconds...`);
-		const embed = new MessageEmbed()
+		const embed = new EmbedBuilder()
 			.setAuthor({ name: `Rate set to: ${args[0]}x`, iconURL: 'https://cdn.discordapp.com/emojis/758423098885275748.gif'})
 			.setColor('#000001');
 		await delay(5000);
