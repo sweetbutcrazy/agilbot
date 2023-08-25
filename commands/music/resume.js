@@ -1,5 +1,5 @@
 const chalk = require('chalk');
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = { 
     config: {
@@ -19,7 +19,7 @@ module.exports = {
         
         await player.pause(player.playing);
 
-        const embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
             .setDescription(`\`⏯\` | **Song has been:** \`${player.playing ? "Resumed" : "Paused"}\``)
             .setColor('#000001');
 
