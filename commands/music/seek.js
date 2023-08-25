@@ -1,5 +1,5 @@
 const chalk = require('chalk');
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 const { PREFIX } = require('../../config.json');
 const formatDuration = require('../../structures/formatduration.js')
 
@@ -26,7 +26,7 @@ module.exports = {
 
         const Duration = formatDuration(player.position);
 
-        const seeked = new MessageEmbed()
+        const seeked = new EmbedBuilder()
             .setDescription("\`⏭\` | **Seeked to:** "+ `\`${Duration}\``)
             .setColor('#000001');
 
