@@ -1,5 +1,5 @@
 const chalk = require('chalk');
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = { 
     config: {
@@ -24,7 +24,7 @@ module.exports = {
 
         await player.connect();
 
-        const embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
             .setDescription(`\`🔊\` | **Joined:** \`${channel.name}\``)
             .setColor('#000001')
 
