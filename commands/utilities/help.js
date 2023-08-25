@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder } = require("discord.js");
 const { PREFIX } = require("../../config.json");
 const { readdirSync } = require("fs");
 const { stripIndents } = require("common-tags");
@@ -15,7 +15,7 @@ module.exports = {
     },
     run: async (client, message, args) => {
         console.log(chalk.magenta(`[COMMAND] Help used by ${message.author.tag} from ${message.guild.name}`));
-        const embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
             .setColor('#000001')
             .setAuthor({ name: `${message.guild.me.displayName} Help Command!`, iconURL: message.guild.iconURL({ dynamic: true })})
             .setThumbnail(client.user.displayAvatarURL({ dynamic: true, size: 2048 }));
