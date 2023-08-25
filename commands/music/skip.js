@@ -1,5 +1,5 @@
 const chalk = require('chalk');
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = { 
     config: {
@@ -19,7 +19,7 @@ module.exports = {
 
         await player.stop();
 
-        const skipped = new MessageEmbed()
+        const skipped = new EmbedBuilder()
             .setDescription("\`⏭\` | **Song has been:** `Skipped`")
             .setColor('#000001');
 
